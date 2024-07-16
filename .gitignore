@@ -1,0 +1,8 @@
+*.log
+.yalc/
+.vscode/
+.DS_Store
+node_modules
+dist
+coverage/
+.idea
