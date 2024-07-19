@@ -1,5 +1,11 @@
 # @labdigital/exporter-oltp-sqs
 
+## 1.0.4
+
+### Patch Changes
+
+- 5135b76: Remove `private` specifier
+
 ## 1.0.3
 
 ### Patch Changes
