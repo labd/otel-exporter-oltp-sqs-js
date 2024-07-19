@@ -1,5 +1,11 @@
 # @labdigital/exporter-oltp-sqs
 
+## 1.0.6
+
+### Patch Changes
+
+- 769e746: Make sure the exporters are type compatible with opentelemetry
+
 ## 1.0.5
 
 ### Patch Changes
