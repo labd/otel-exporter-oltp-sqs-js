@@ -1,5 +1,11 @@
 # @labdigital/exporter-oltp-sqs
 
+## 1.0.7
+
+### Patch Changes
+
+- e26155a: Resolve issue with mismatching \_serializer field
+
 ## 1.0.6
 
 ### Patch Changes
