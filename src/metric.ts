@@ -24,7 +24,7 @@ class OTLPExporterProxy extends OLTPExporterSQS<
   }
 }
 
-export class OTLPMetricExporter extends OTLPMetricExporterBase<OTLPExporterProxy> {
+export class OTLPMetricExporterSQS extends OTLPMetricExporterBase<OTLPExporterProxy> {
   constructor(config?: OTLPExporterNodeConfigBase & OTLPMetricExporterOptions) {
     super(new OTLPExporterProxy(config), config);
   }

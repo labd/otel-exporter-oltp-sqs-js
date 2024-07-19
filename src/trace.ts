@@ -7,7 +7,7 @@ import { ReadableSpan, SpanExporter } from "@opentelemetry/sdk-trace-base";
 import { SQSConfig } from "./config";
 import { OLTPExporterSQS } from "./sqs";
 
-export class OTLPTraceExporter
+export class OTLPTraceExporterSQS
   extends OLTPExporterSQS<ReadableSpan, IExportTraceServiceResponse>
   implements SpanExporter
 {

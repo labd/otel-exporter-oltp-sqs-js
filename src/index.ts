@@ -1,2 +1,2 @@
-export { OTLPMetricExporter } from "./metric";
-export { OTLPTraceExporter } from "./trace";
+export { OTLPMetricExporterSQS } from "./metric";
+export { OTLPTraceExporterSQS } from "./trace";

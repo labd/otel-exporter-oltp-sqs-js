@@ -14,8 +14,8 @@ Set the `OTEL_EXPORTER_OTLP_SQS_QUEUE_URL` env var to the SQS query to push the 
 
 ```ts
 import {
-  OTLPMetricExporter as OTLPMetricExporterSQS,
-  OTLPTraceExporter as OTLPTraceExporterSQS,
+  OTLPMetricExporterSQS,
+  OTLPTraceExporterSQS,
 } from "@labdigital/exporter-oltp-sqs";
 import { PeriodicExportingMetricReader } from "@opentelemetry/sdk-metrics";
 import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-node";
