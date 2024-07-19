@@ -1,5 +1,11 @@
 # @labdigital/exporter-oltp-sqs
 
+## 1.0.5
+
+### Patch Changes
+
+- 896731f: Rename exports to appen SQS as suffix
+
 ## 1.0.4
 
 ### Patch Changes
