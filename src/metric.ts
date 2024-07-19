@@ -1,6 +1,6 @@
 import { OTLPExporterNodeConfigBase } from "@opentelemetry/otlp-exporter-base";
 import { SQSConfig } from "./config";
-import { OLTPExporterSQS } from "./sqs";
+import { OTLPExporterBaseSQS } from "./sqs";
 import {
   OTLPMetricExporterBase,
   OTLPMetricExporterOptions,
@@ -11,7 +11,7 @@ import {
 } from "@opentelemetry/otlp-transformer";
 import { ResourceMetrics } from "@opentelemetry/sdk-metrics";
 
-class OTLPExporterProxy extends OLTPExporterSQS<
+class OTLPExporterProxy extends OTLPExporterBaseSQS<
   ResourceMetrics,
   IExportMetricsServiceResponse
 > {

@@ -12,11 +12,11 @@ import { diag } from "@opentelemetry/api";
 import type * as http from 'http';
 import type * as https from 'https';
 
-export class OLTPExporterSQS<
+export abstract class OTLPExporterBaseSQS<
   ExportItem,
-  IExportServiceResponse
+  ServiceResponse,
 > extends OTLPExporterBase<OTLPExporterNodeConfigBase, ExportItem> {
-  private _serializer: ISerializer<ExportItem[], IExportServiceResponse>;
+  private _serializer: ISerializer<ExportItem[], ServiceResponse>;
 
   private _sqsClient: SQSClient | undefined;
 
@@ -37,7 +37,7 @@ export class OLTPExporterSQS<
   constructor(
     config: OTLPExporterNodeConfigBase & SQSConfig = {},
     kind: "trace" | "metric",
-    serializer: ISerializer<ExportItem[], IExportServiceResponse>
+    serializer: ISerializer<ExportItem[], ServiceResponse>
   ) {
     super(config);
 

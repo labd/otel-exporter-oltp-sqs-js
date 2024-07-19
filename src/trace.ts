@@ -5,10 +5,10 @@ import {
 } from "@opentelemetry/otlp-transformer";
 import { ReadableSpan, SpanExporter } from "@opentelemetry/sdk-trace-base";
 import { SQSConfig } from "./config";
-import { OLTPExporterSQS } from "./sqs";
+import { OTLPExporterBaseSQS } from "./sqs";
 
 export class OTLPTraceExporterSQS
-  extends OLTPExporterSQS<ReadableSpan, IExportTraceServiceResponse>
+  extends OTLPExporterBaseSQS<ReadableSpan, IExportTraceServiceResponse>
   implements SpanExporter
 {
   constructor(config: OTLPExporterNodeConfigBase & SQSConfig = {}) {
