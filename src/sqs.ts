@@ -9,6 +9,8 @@ import { SQSConfig } from "./config";
 import { ISerializer } from "@opentelemetry/otlp-transformer";
 import { compressData } from "./utils";
 import { diag } from "@opentelemetry/api";
+import type * as http from 'http';
+import type * as https from 'https';
 
 export class OLTPExporterSQS<
   ExportItem,
@@ -16,13 +18,21 @@ export class OLTPExporterSQS<
 > extends OTLPExporterBase<OTLPExporterNodeConfigBase, ExportItem> {
   private _serializer: ISerializer<ExportItem[], IExportServiceResponse>;
 
-  compression: CompressionAlgorithm;
-
   private _sqsClient: SQSClient | undefined;
 
   private _sqsQueueURL: string | undefined;
 
   private _kind: "trace" | "metric";
+
+  private _contentType: string
+
+  DEFAULT_HEADERS: Record<string, string>;
+
+  headers: Record<string, string>;
+
+  agent: http.Agent | https.Agent | undefined;
+
+  compression: CompressionAlgorithm;
 
   constructor(
     config: OTLPExporterNodeConfigBase & SQSConfig = {},
@@ -65,7 +75,6 @@ export class OLTPExporterSQS<
         .then((body) => {
           const command = new SendMessageCommand({
             QueueUrl: this._sqsQueueURL,
-            MessageGroupId: "otel",
             MessageBody: body,
           });
 
