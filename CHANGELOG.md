@@ -1,5 +1,11 @@
 # @labdigital/exporter-oltp-sqs
 
+## 1.0.3
+
+### Patch Changes
+
+- 7cf2e4c: Add readme
+
 ## 1.0.2
 
 ### Patch Changes
